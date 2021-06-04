@@ -1,13 +1,37 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Input;
 
 namespace M120_226B_UTT_Project {
-    class GameSetupViewModel {
-        public string PlayerXName = "";
-        public string PlayerOName = "";
+    class GameSetupViewModel : ObservableObject {
+        RelayCommand toExecuteOnStartGame;
+        public GameSetupViewModel(RelayCommand executeToClose) {
+            this.toExecuteOnStartGame = executeToClose;
+            StartGameCommand = new RelayCommand(command => StartGameButtonClick("StartGameButton"));
+        }
+
+        private string _PlayerX = "";
+        public string PlayerXName {
+            get { return _PlayerX; }
+            set {
+                _PlayerX = value;
+                RaisePropertyChanged("PlayerXName");
+            }
+        }
+        private string _PlayerO = "";
+        public string PlayerOName {
+            get { return _PlayerO; }
+            set {
+                _PlayerO = value;
+                RaisePropertyChanged("PlayerOName");
+            }
+        }
+
 
         /*
          This Booleans are Virtual Properties acording to the Int.
@@ -24,16 +48,23 @@ namespace M120_226B_UTT_Project {
         public bool Enemy_Bot {
             get { return _EnemyPlayer == 1; }
             set {
-                if (value)
+                if (value) {
                     _EnemyPlayer = 1;
+                    RaisePropertyChanged("Enemy_Player");
+                    RaisePropertyChanged("Enemy_Bot");
+                }
 
             }
         }
         public bool Enemy_Player {
             get { return _EnemyPlayer == 2; }
             set {
-                if (value)
+                if (value) {
                     _EnemyPlayer = 2;
+                    RaisePropertyChanged("Enemy_Player");
+                    RaisePropertyChanged("Enemy_Bot");
+
+                }
             }
         }
 
@@ -46,22 +77,37 @@ namespace M120_226B_UTT_Project {
         public bool Bot_Level1 {
             get { return _BotDifficulty == 1; }
             set {
-                if (value)
+                if (value) {
                     _BotDifficulty = 1;
+                    RaisePropertyChanged("Bot_Level1");
+                    RaisePropertyChanged("Bot_Level2");
+                    RaisePropertyChanged("Bot_Level3");
+                }
+
             }
         }
         public bool Bot_Level2 {
             get { return _BotDifficulty == 2; }
             set {
-                if (value)
+                if (value) {
                     _BotDifficulty = 2;
+                    RaisePropertyChanged("Bot_Level1");
+                    RaisePropertyChanged("Bot_Level2");
+                    RaisePropertyChanged("Bot_Level3");
+                }
+
             }
         }
         public bool Bot_Level3 {
             get { return _BotDifficulty == 3; }
             set {
-                if (value)
+                if (value) {
                     _BotDifficulty = 3;
+                    RaisePropertyChanged("Bot_Level1");
+                    RaisePropertyChanged("Bot_Level2");
+                    RaisePropertyChanged("Bot_Level3");
+                }
+
             }
         }
 
@@ -74,16 +120,64 @@ namespace M120_226B_UTT_Project {
         public bool First_X {
             get { return _FirstMove == 1; }
             set {
-                if (value)
+                if (value) {
                     _FirstMove = 1;
+                    RaisePropertyChanged("First_X");
+                    RaisePropertyChanged("First_O");
+                }
+
             }
         }
         public bool First_O {
             get { return _FirstMove == 2; }
             set {
-                if (value)
+                if (value) {
                     _FirstMove = 2;
+                    RaisePropertyChanged("First_X");
+                    RaisePropertyChanged("First_O");
+                }
+
             }
+        }
+
+
+        public ICommand StartGameCommand { get; set; }
+
+        private void StartGameButtonClick(object sender) {
+            if (IsValidData()) {
+                MessageBox.Show("Alles Okey (Start Game)");
+            }
+
+
+        }
+
+        private bool IsValidData() {
+            List<string> errors = new List<string>();
+            if (_PlayerX.Length < 1)
+                errors.Add("Der Name des Spieler X ist nicht gültig");
+            if (_FirstMove == 0) {
+                _FirstMove = 1;
+                RaisePropertyChanged("First_X");
+            }
+            if (_EnemyPlayer == 0) {
+                errors.Add("Wählen Sie Ihren Gegner aus");
+            }
+            else if (_EnemyPlayer == 1) {// Gegner ist Bot
+                if (_BotDifficulty == 0) {
+                    errors.Add("Wählen Sie eine Schwirigkeitsstufe für den Bot an");
+                }
+            }
+            else if (_EnemyPlayer == 2) {// Gegner ist Spieler
+                if (PlayerOName.Length < 1) {
+                    errors.Add("Der Name des Spieler O ist nicht gültig");
+                }
+            }
+            if (errors.Count > 0) {
+                MessageBox.Show("Es sind folgende Fehler aufgetreten: \n" + string.Join("\n", errors));
+                return false;
+            }
+            else
+                return true;
         }
 
 
