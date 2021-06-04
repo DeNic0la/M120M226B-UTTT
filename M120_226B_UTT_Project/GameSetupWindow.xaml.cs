@@ -20,6 +20,7 @@ namespace M120_226B_UTT_Project {
     public partial class GameSetupWindow : Window {
         public GameSetupWindow() {
             InitializeComponent();
+            this.DataContext = new GameSetupViewModel();
         }
     }
 }
