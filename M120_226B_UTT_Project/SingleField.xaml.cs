@@ -17,8 +17,8 @@ namespace M120_226B_UTT_Project {
     /// <summary>
     /// Interaktionslogik für GameField.xaml
     /// </summary>
-    public partial class GameField : UserControl {
-        public GameField() {
+    public partial class SingleField : UserControl {
+        public SingleField() {
             InitializeComponent();
         }
         public void setFieldToX() {

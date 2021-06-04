@@ -16,6 +16,9 @@ namespace M120_226B_UTT_Project {
             GameSetupWindow setupWindow = new GameSetupWindow();
             setupWindow.Show();
 
+            GameWindow game = new GameWindow();
+            game.Show();
+
         }
     }
 }

@@ -1,0 +1,27 @@
+﻿<UserControl x:Class="M120_226B_UTT_Project.SingleField"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:M120_226B_UTT_Project"
+             mc:Ignorable="d" 
+             d:DesignHeight="500" d:DesignWidth="500">
+    <Grid>
+
+
+        <TabControl HorizontalAlignment="Stretch" Margin="5" VerticalAlignment="Stretch" Background="{x:Null}" Visibility="Collapsed">
+            <TabItem x:Name="tabImageX">
+                <Image x:Name="imageX" Source="X_Black.png"/>
+            </TabItem>
+            <TabItem x:Name="tabImageO">
+                <Image x:Name="imageO" Source="O_Black.png"/>
+            </TabItem>
+            <TabItem x:Name="tabEmpty">
+                <Button x:Name="btnField" Margin="1" Background="{x:Null}" BorderBrush="Black" Foreground="{x:Null}">
+
+                </Button>
+            </TabItem>
+        </TabControl>
+
+    </Grid>
+</UserControl>
