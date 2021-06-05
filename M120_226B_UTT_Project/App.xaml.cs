@@ -14,11 +14,19 @@ namespace M120_226B_UTT_Project {
         protected override void OnStartup(StartupEventArgs e) {
             base.OnStartup(e);
             GameSetupWindow setupWindow = new GameSetupWindow();
-            setupWindow.Show();
+            setupWindow.Show();           
 
-            GameWindow game = new GameWindow();
-            game.Show();
+
+            
 
         }
+
+        private void startGame(GameSetupWindow setupWindow)
+        {
+            setupWindow.Close();
+            GameWindow game = new GameWindow();
+            game.Show();
+        }
     }
+
 }

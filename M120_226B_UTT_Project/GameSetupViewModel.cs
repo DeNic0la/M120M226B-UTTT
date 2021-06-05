@@ -9,9 +9,9 @@ using System.Windows.Input;
 
 namespace M120_226B_UTT_Project {
     class GameSetupViewModel : ObservableObject {
-        RelayCommand toExecuteOnStartGame;
-        public GameSetupViewModel(RelayCommand executeToClose) {
-            this.toExecuteOnStartGame = executeToClose;
+        GameSetupWindow windowForClosing;
+        public GameSetupViewModel(GameSetupWindow windowToClose) {
+            windowForClosing = windowToClose;
             StartGameCommand = new RelayCommand(command => StartGameButtonClick("StartGameButton"));
         }
 
@@ -145,7 +145,12 @@ namespace M120_226B_UTT_Project {
 
         private void StartGameButtonClick(object sender) {
             if (IsValidData()) {
-                MessageBox.Show("Alles Okey (Start Game)");
+                // Pass Data To Game Window Here
+                GameWindow gameWindow = new GameWindow();
+                gameWindow.Show();
+
+                //Close Current Windows, Setup is Complete
+                windowForClosing.Close();
             }
 
 
