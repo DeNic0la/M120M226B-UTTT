@@ -10,16 +10,19 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace M120_226B_UTT_Project {
+namespace M120_226B_UTT_Project
+{
     /// <summary>
-    /// Interaktionslogik für GameWindow.xaml
+    /// Interaction logic for BasicField.xaml
     /// </summary>
-    public partial class GameWindow : Window {
-        public GameWindow(GameSetupViewModel setupData) {
+    public partial class BasicField : UserControl
+    {
+        public BasicField()
+        {
             InitializeComponent();
-            this.DataContext = new GamePlayViewModel(setupData);
         }
     }
 }

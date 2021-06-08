@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:M120_226B_UTT_Project"
              mc:Ignorable="d" 
              d:DesignHeight="500" d:DesignWidth="500">
-    <Grid>
+    <Grid Background="#19D3D3D3">
 
 
         <TabControl HorizontalAlignment="Stretch" Margin="5" VerticalAlignment="Stretch" Background="{x:Null}" Visibility="Collapsed">

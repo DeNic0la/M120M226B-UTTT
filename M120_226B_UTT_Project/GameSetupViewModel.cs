@@ -8,7 +8,7 @@ using System.Windows;
 using System.Windows.Input;
 
 namespace M120_226B_UTT_Project {
-    class GameSetupViewModel : ObservableObject {
+    public class GameSetupViewModel : ObservableObject {
         GameSetupWindow windowForClosing;
         public GameSetupViewModel(GameSetupWindow windowToClose) {
             windowForClosing = windowToClose;
@@ -72,6 +72,10 @@ namespace M120_226B_UTT_Project {
          Virtual PropertyBoolean for Bot Difficulty
          */
         private int _BotDifficulty = 0;
+        public int BotDifficulty
+        {
+            get { return _BotDifficulty; }
+        }
 
 
         public bool Bot_Level1 {
@@ -145,8 +149,9 @@ namespace M120_226B_UTT_Project {
 
         private void StartGameButtonClick(object sender) {
             if (IsValidData()) {
+
                 // Pass Data To Game Window Here
-                GameWindow gameWindow = new GameWindow();
+                GameWindow gameWindow = new GameWindow(this);
                 gameWindow.Show();
 
                 //Close Current Windows, Setup is Complete

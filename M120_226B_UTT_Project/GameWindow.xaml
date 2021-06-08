@@ -12,7 +12,28 @@
             <ColumnDefinition Width="35*" MinWidth="270" />
         </Grid.ColumnDefinitions>
         <Grid Margin="10">
-            <Image Margin="5" Source="Mockup_M120.png" />
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+            
+            <!--Image Margin="5,5,4.6,5" Source="Mockup_M120.png" Grid.ColumnSpan="3" Grid.RowSpan="3" /-->
+            <local:BasicField Margin="5,5,5,5"/>
+            <local:BasicField Margin="5,5,5,5" Grid.Column="1"/>
+            <local:BasicField Margin="5,5,5,5" Grid.Column="2"/>
+            <local:BasicField Margin="5,5,5,5" Grid.Row="1"/>
+            <local:BasicField Margin="5,5,5,5" Grid.Row="1" Grid.Column="1"/>
+            <local:BasicField Margin="5,5,5,5" Grid.Row="1" Grid.Column="2"/>
+            <local:BasicField Margin="5,5,5,5" Grid.Row="2"/>
+            <local:BasicField Margin="5,5,5,5" Grid.Row="2" Grid.Column="1"/>
+            <local:BasicField Margin="5,5,5,5" Grid.Row="2" Grid.Column="2"/>
+
         </Grid>
         <StackPanel Grid.Column="1" Margin="5">
             <Grid Height="100">

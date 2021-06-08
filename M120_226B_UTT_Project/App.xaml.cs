@@ -20,13 +20,6 @@ namespace M120_226B_UTT_Project {
             
 
         }
-
-        private void startGame(GameSetupWindow setupWindow)
-        {
-            setupWindow.Close();
-            GameWindow game = new GameWindow();
-            game.Show();
-        }
     }
 
 }
