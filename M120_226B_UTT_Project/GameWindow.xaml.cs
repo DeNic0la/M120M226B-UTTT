@@ -19,7 +19,8 @@ namespace M120_226B_UTT_Project {
     public partial class GameWindow : Window {
         public GameWindow(GameSetupViewModel setupData) {
             InitializeComponent();
-            this.DataContext = new GamePlayViewModel(setupData);
+            BasicFieldModel bfm = new BasicFieldModel(true);
+            this.DataContext = new UltimateFieldViewModel(bfm, setupData);
         }
     }
 }

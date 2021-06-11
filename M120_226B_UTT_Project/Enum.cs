@@ -5,4 +5,8 @@
         Empty,
         Tie,
     }
+    public enum Turn {
+        X,
+        O,
+    }
 }

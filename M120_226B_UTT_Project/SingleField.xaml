@@ -18,7 +18,7 @@
             </TabItem>
             <TabItem x:Name="tabEmpty" IsSelected="{Binding FieldIsEmpty, Mode=OneWay}">
                 <Button x:Name="btnField" Margin="1" Background="{x:Null}" BorderBrush="Black" Foreground="{x:Null}">
-
+                    <Label Content="{Binding Test, Mode=OneWay}"/>
                 </Button>
             </TabItem>
         </TabControl>

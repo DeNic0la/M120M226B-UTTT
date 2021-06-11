@@ -55,7 +55,14 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="BasicFieldModel.cs" />
+    <Compile Include="BasicFieldViewModel.cs" />
+    <Compile Include="Enum.cs" />
+    <Compile Include="Helper.cs" />
+    <Compile Include="IField.cs" />
+    <Compile Include="SingleFieldModel.cs" />
     <Compile Include="SingleFieldViewModel.cs" />
+    <Compile Include="UltimateFieldViewModel.cs" />
     <Page Include="BasicField.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

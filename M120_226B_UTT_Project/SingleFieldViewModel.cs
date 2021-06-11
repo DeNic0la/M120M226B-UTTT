@@ -52,6 +52,11 @@ namespace M120_226B_UTT_Project {
 
             _Model = model;
 
+
+        }
+
+        public string Test {
+            get { return "X"; }
         }
 
         private void Model_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e) {

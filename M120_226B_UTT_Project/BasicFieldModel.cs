@@ -7,18 +7,30 @@ using System.Threading.Tasks;
 namespace M120_226B_UTT_Project {
     public class BasicFieldModel : ObservableObject, IField {
 
-        private SingleFieldModel[] _Fields;
+        private IField[] _Fields;
         private FieldState _FieldState;
         private int _EmptySubFields;
 
-        public BasicFieldModel() {
+        public BasicFieldModel(bool isUltimate = false) {
             _EmptySubFields = 9;
-            _Fields = new SingleFieldModel[9];
-            for (int i = 0; i < 9; i++) {
-                SingleFieldModel singleFieldModel = new SingleFieldModel();
-                singleFieldModel.PropertyChanged += SingleFieldModel_PropertyChanged;
-                _Fields[i] = singleFieldModel;
+
+            if (isUltimate) {
+                _Fields = new BasicFieldModel[9];
+                for (int i = 0; i < 9; i++) {
+                    BasicFieldModel subFieldModel = new BasicFieldModel();
+                    subFieldModel.PropertyChanged += SingleFieldModel_PropertyChanged;
+                    _Fields[i] = subFieldModel;
+                }
             }
+            else {
+                _Fields = new SingleFieldModel[9];
+                for (int i = 0; i < 9; i++) {
+                    SingleFieldModel subFieldModel = new SingleFieldModel();
+                    subFieldModel.PropertyChanged += SingleFieldModel_PropertyChanged;
+                    _Fields[i] = subFieldModel;
+                }
+            }
+
             _FieldState = FieldState.Empty;
 
         }
@@ -35,22 +47,23 @@ namespace M120_226B_UTT_Project {
         }
 
         private void SingleFieldModel_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e) {
-            //Check if FieldStateStillNeedsToBeEmptry
-            //SingleFieldModel sfm = (SingleFieldModel)sender;
-            /*try { //Activate if Errors are thrown 
-                sfm = (SingleFieldModel)sender;
-            }
-            catch (Exception ignored) {
-                return
-            }*/
             if (e.PropertyName == "FieldState") {
                 _EmptySubFields--;
             }
             if (_EmptySubFields <= 6) {
+                FieldState before = _FieldState;
                 _FieldState = Helper.ValidateFieldState(_Fields);
                 if (_EmptySubFields == 0 && _FieldState == FieldState.Empty) {
                     _FieldState = FieldState.Tie;
                 }
+                if (before != _FieldState) {
+                    RaisePropertyChanged("FieldState");
+                }
+            }
+        }
+        public IField[] Fields {
+            get {
+                return _Fields;
             }
         }
     }
