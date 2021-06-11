@@ -17,15 +17,15 @@
             <ColumnDefinition Width="1*"/>
             <ColumnDefinition Width="1*"/>
         </Grid.ColumnDefinitions>
-        <local:SingleField DataContext="{Binding SubModel1}" Margin="5,5,5,5"/>
-        <local:SingleField DataContext="{Binding SubModel2}" Margin="5,5,5,5" Grid.Column="1"/>
-        <local:SingleField DataContext="{Binding SubModel3}" Margin="5,5,5,5" Grid.Column="2"/>
-        <local:SingleField DataContext="{Binding SubModel4}" Margin="5,5,5,5" Grid.Row="1"/>
-        <local:SingleField DataContext="{Binding SubModel5}" Margin="5,5,5,5" Grid.Row="1" Grid.Column="1"/>
-        <local:SingleField DataContext="{Binding SubModel6}" Margin="5,5,5,5" Grid.Row="1" Grid.Column="2"/>
-        <local:SingleField DataContext="{Binding SubModel7}" Margin="5,5,5,5" Grid.Row="2"/>
-        <local:SingleField DataContext="{Binding SubModel8}" Margin="5,5,5,5" Grid.Row="2" Grid.Column="1"/>
-        <local:SingleField DataContext="{Binding SubModel9}" Margin="5,5,5,5" Grid.Row="2" Grid.Column="2"/>
+        <local:SingleField DataContext="{Binding SubModel1}" Margin="0"/>
+        <local:SingleField DataContext="{Binding SubModel2}" Margin="0" Grid.Column="1"/>
+        <local:SingleField DataContext="{Binding SubModel3}" Margin="0" Grid.Column="2"/>
+        <local:SingleField DataContext="{Binding SubModel4}" Margin="0" Grid.Row="1"/>
+        <local:SingleField DataContext="{Binding SubModel5}" Margin="0" Grid.Row="1" Grid.Column="1"/>
+        <local:SingleField DataContext="{Binding SubModel6}" Margin="0" Grid.Row="1" Grid.Column="2"/>
+        <local:SingleField DataContext="{Binding SubModel7}" Margin="0" Grid.Row="2"/>
+        <local:SingleField DataContext="{Binding SubModel8}" Margin="0" Grid.Row="2" Grid.Column="1"/>
+        <local:SingleField DataContext="{Binding SubModel9}" Margin="0" Grid.Row="2" Grid.Column="2"/>
 
 
     </Grid>

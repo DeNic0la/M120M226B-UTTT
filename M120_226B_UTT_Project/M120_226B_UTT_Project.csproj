@@ -58,6 +58,7 @@
     <Compile Include="BasicFieldModel.cs" />
     <Compile Include="BasicFieldViewModel.cs" />
     <Compile Include="Enum.cs" />
+    <Compile Include="GameManager.cs" />
     <Compile Include="Helper.cs" />
     <Compile Include="IField.cs" />
     <Compile Include="SingleFieldModel.cs" />

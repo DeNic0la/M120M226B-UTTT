@@ -72,8 +72,19 @@ namespace M120_226B_UTT_Project {
             _ScoreX = 0;
             _ScoreO = 0;
 
-            _CurrentTurn = setupData.First_X ? Turn.X : Turn.O;
+            GameManager.Turn = setupData.First_X ? Turn.X : Turn.O;
 
+            fieldModel.PropertyChanged += FieldModel_PropertyChanged;
+
+
+        }
+
+        private void FieldModel_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
+        {
+            if (e.PropertyName == "FieldState")
+            {
+                //TODO Check For Win and Update Stats
+            }
         }
 
         protected string _PlayerX;
@@ -84,7 +95,6 @@ namespace M120_226B_UTT_Project {
 
         protected int _BotLevel;
 
-        protected Turn _CurrentTurn;
 
         public string PlayerXDisplay {
             get {

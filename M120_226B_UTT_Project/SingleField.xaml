@@ -9,17 +9,21 @@
     <Grid Background="#19D3D3D3">
 
 
-        <TabControl HorizontalAlignment="Stretch" Margin="5" VerticalAlignment="Stretch" Background="{x:Null}" Visibility="Collapsed">
-            <TabItem x:Name="tabImageX" IsSelected="{Binding FieldIsX, Mode=OneWay}">
-                <Image x:Name="imageX" Source="X_Black.png"/>
-            </TabItem>
-            <TabItem x:Name="tabImageO" IsSelected="{Binding FieldIsO, Mode=OneWay}">
-                <Image x:Name="imageO" Source="O_Black.png"/>
-            </TabItem>
-            <TabItem x:Name="tabEmpty" IsSelected="{Binding FieldIsEmpty, Mode=OneWay}">
-                <Button x:Name="btnField" Margin="1" Background="{x:Null}" BorderBrush="Black" Foreground="{x:Null}">
-                    <Label Content="{Binding Test, Mode=OneWay}"/>
+        <TabControl Margin="0" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" >
+            <TabItem Header="tabDefault" IsSelected="{Binding FieldIsEmpty, Mode=OneWay}" Visibility="Collapsed" Background="{x:Null}" BorderBrush="{x:Null}" Margin="0" >
+                <Button x:Name="btnField" Margin="0" Background="#FF909090" BorderBrush="Black" Foreground="{x:Null}">
+
                 </Button>
+            </TabItem>
+            <TabItem Header="tabFieldO" IsSelected="{Binding FieldIsO, Mode=OneWay}" Visibility="Collapsed" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" >
+                <Grid Margin="0">
+                    <Image x:Name="imageO" Source="O_Black.png"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="tabFieldX" IsSelected="{Binding FieldIsX, Mode=OneWay}" Visibility="Collapsed" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}">
+                <Grid Margin="0">
+                    <Image x:Name="imageX" Source="X_Black.png"/>
+                </Grid>
             </TabItem>
         </TabControl>
 

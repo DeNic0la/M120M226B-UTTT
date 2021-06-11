@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace M120_226B_UTT_Project {
     public class SingleFieldModel : ObservableObject, IField {
         public SingleFieldModel() {
-            _FieldState = FieldState.X;
+            _FieldState = FieldState.Empty;
             //Postion = postition; //Probably not needed
         }
         private FieldState _FieldState;

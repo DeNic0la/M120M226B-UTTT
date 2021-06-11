@@ -55,8 +55,9 @@ namespace M120_226B_UTT_Project {
 
         }
 
-        public string Test {
-            get { return "X"; }
+        public void ButtonWasClicked()
+        {
+            //TODO  
         }
 
         private void Model_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e) {
