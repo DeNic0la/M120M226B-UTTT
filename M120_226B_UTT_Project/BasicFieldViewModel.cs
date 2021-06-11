@@ -7,15 +7,56 @@ using System.Threading.Tasks;
 namespace M120_226B_UTT_Project {
     public class BasicFieldViewModel : ObservableObject {
         public SingleFieldViewModel[] SubViewModels;
+        public SingleFieldViewModel SubModel1 {
+            get {
+                return SubViewModels[0];
+            }
+        }
+        public SingleFieldViewModel SubModel2 {
+            get {
+                return SubViewModels[1];
+            }
+        }
+        public SingleFieldViewModel SubModel3 {
+            get {
+                return SubViewModels[2];
+            }
+        }
+        public SingleFieldViewModel SubModel4 {
+            get {
+                return SubViewModels[3];
+            }
+        }
+        public SingleFieldViewModel SubModel5 {
+            get {
+                return SubViewModels[4];
+            }
+        }
+        public SingleFieldViewModel SubModel6 {
+            get {
+                return SubViewModels[5];
+            }
+        }
+        public SingleFieldViewModel SubModel7 {
+            get {
+                return SubViewModels[6];
+            }
+        }
+        public SingleFieldViewModel SubModel8 {
+            get {
+                return SubViewModels[7];
+            }
+        }
+        public SingleFieldViewModel SubModel9 {
+            get {
+                return SubViewModels[8];
+            }
+        }
         public BasicFieldViewModel(BasicFieldModel fieldModel) {
             SubViewModels = new SingleFieldViewModel[9];
             for (int i = 0; i < fieldModel.Fields.Length; i++) {
                 SubViewModels[i] = new SingleFieldViewModel((SingleFieldModel)fieldModel.Fields[i]);
             }
-        }
-
-        public string Test {
-            get { return "X"; }
         }
 
     }

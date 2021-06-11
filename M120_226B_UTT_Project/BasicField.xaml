@@ -17,16 +17,15 @@
             <ColumnDefinition Width="1*"/>
             <ColumnDefinition Width="1*"/>
         </Grid.ColumnDefinitions>
-        <Label Content="{Binding Test, Mode=OneWay}"/>
-        <local:SingleField DataContext="{Binding SubViewModels[0]}" Margin="5,5,5,5"/>
-        <local:SingleField DataContext="{Binding SubViewModels[1]}" Margin="5,5,5,5" Grid.Column="1"/>
-        <local:SingleField DataContext="{Binding SubViewModels[2]}" Margin="5,5,5,5" Grid.Column="2"/>
-        <local:SingleField DataContext="{Binding SubViewModels[3]}" Margin="5,5,5,5" Grid.Row="1"/>
-        <local:SingleField DataContext="{Binding SubViewModels[4]}" Margin="5,5,5,5" Grid.Row="1" Grid.Column="1"/>
-        <local:SingleField DataContext="{Binding SubViewModels[5]}" Margin="5,5,5,5" Grid.Row="1" Grid.Column="2"/>
-        <local:SingleField DataContext="{Binding SubViewModels[6]}" Margin="5,5,5,5" Grid.Row="2"/>
-        <local:SingleField DataContext="{Binding SubViewModels[7]}" Margin="5,5,5,5" Grid.Row="2" Grid.Column="1"/>
-        <local:SingleField DataContext="{Binding SubViewModels[8]}" Margin="5,5,5,5" Grid.Row="2" Grid.Column="2"/>
+        <local:SingleField DataContext="{Binding SubModel1}" Margin="5,5,5,5"/>
+        <local:SingleField DataContext="{Binding SubModel2}" Margin="5,5,5,5" Grid.Column="1"/>
+        <local:SingleField DataContext="{Binding SubModel3}" Margin="5,5,5,5" Grid.Column="2"/>
+        <local:SingleField DataContext="{Binding SubModel4}" Margin="5,5,5,5" Grid.Row="1"/>
+        <local:SingleField DataContext="{Binding SubModel5}" Margin="5,5,5,5" Grid.Row="1" Grid.Column="1"/>
+        <local:SingleField DataContext="{Binding SubModel6}" Margin="5,5,5,5" Grid.Row="1" Grid.Column="2"/>
+        <local:SingleField DataContext="{Binding SubModel7}" Margin="5,5,5,5" Grid.Row="2"/>
+        <local:SingleField DataContext="{Binding SubModel8}" Margin="5,5,5,5" Grid.Row="2" Grid.Column="1"/>
+        <local:SingleField DataContext="{Binding SubModel9}" Margin="5,5,5,5" Grid.Row="2" Grid.Column="2"/>
 
 
     </Grid>

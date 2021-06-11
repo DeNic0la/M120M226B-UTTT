@@ -24,15 +24,15 @@
             </Grid.ColumnDefinitions>
 
             <!--Image Margin="5,5,4.6,5" Source="Mockup_M120.png" Grid.ColumnSpan="3" Grid.RowSpan="3" /-->
-            <local:BasicField Margin="5,5,5,5" DataContext="{Binding TestModel}"/>
-            <local:BasicField Margin="5,5,5,5" DataContext="{Binding SubViewModels[1]}" Grid.Column="1"/>
-            <local:BasicField Margin="5,5,5,5" DataContext="{Binding SubViewModels[2]}" Grid.Column="2"/>
-            <local:BasicField Margin="5,5,5,5" DataContext="{Binding SubViewModels[3]}" Grid.Row="1"/>
-            <local:BasicField Margin="5,5,5,5" DataContext="{Binding SubViewModels[4]}" Grid.Row="1" Grid.Column="1"/>
-            <local:BasicField Margin="5,5,5,5" DataContext="{Binding SubViewModels[5]}" Grid.Row="1" Grid.Column="2"/>
-            <local:BasicField Margin="5,5,5,5" DataContext="{Binding SubViewModels[6]}" Grid.Row="2"/>
-            <local:BasicField Margin="5,5,5,5" DataContext="{Binding SubViewModels[7]}" Grid.Row="2" Grid.Column="1"/>
-            <local:BasicField Margin="5,5,5,5" DataContext="{Binding SubViewModels[8]}" Grid.Row="2" Grid.Column="2"/>
+            <local:BasicField Margin="5,5,5,5" DataContext="{Binding SubModel1}"/>
+            <local:BasicField Margin="5,5,5,5" DataContext="{Binding SubModel2}" Grid.Column="1"/>
+            <local:BasicField Margin="5,5,5,5" DataContext="{Binding SubModel3}" Grid.Column="2"/>
+            <local:BasicField Margin="5,5,5,5" DataContext="{Binding SubModel4}" Grid.Row="1"/>
+            <local:BasicField Margin="5,5,5,5" DataContext="{Binding SubModel5}" Grid.Row="1" Grid.Column="1"/>
+            <local:BasicField Margin="5,5,5,5" DataContext="{Binding SubModel6}" Grid.Row="1" Grid.Column="2"/>
+            <local:BasicField Margin="5,5,5,5" DataContext="{Binding SubModel7}" Grid.Row="2"/>
+            <local:BasicField Margin="5,5,5,5" DataContext="{Binding SubModel8}" Grid.Row="2" Grid.Column="1"/>
+            <local:BasicField Margin="5,5,5,5" DataContext="{Binding SubModel9}" Grid.Row="2" Grid.Column="2"/>
 
         </Grid>
         <StackPanel Grid.Column="1" Margin="5">

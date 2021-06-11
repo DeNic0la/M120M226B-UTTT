@@ -34,22 +34,22 @@ namespace M120_226B_UTT_Project {
         }
         public BasicFieldViewModel SubModel6 {
             get {
-                return SubViewModels[0];
+                return SubViewModels[5];
             }
         }
         public BasicFieldViewModel SubModel7 {
             get {
-                return SubViewModels[0];
+                return SubViewModels[6];
             }
         }
         public BasicFieldViewModel SubModel8 {
             get {
-                return SubViewModels[0];
+                return SubViewModels[7];
             }
         }
         public BasicFieldViewModel SubModel9 {
             get {
-                return SubViewModels[0];
+                return SubViewModels[8];
             }
         }
 
