@@ -53,11 +53,13 @@ namespace M120_226B_UTT_Project {
             }
         }
         private BasicFieldModel fieldModel;
-        public BasicFieldViewModel(BasicFieldModel fieldModel) {
+        private int ownFieldPosition;
+        public BasicFieldViewModel(BasicFieldModel fieldModel, int fieldPostion) {
+            ownFieldPosition = fieldPostion;
             this.fieldModel = fieldModel;
             SubViewModels = new SingleFieldViewModel[9];
             for (int i = 0; i < fieldModel.Fields.Length; i++) {
-                SubViewModels[i] = new SingleFieldViewModel((SingleFieldModel)fieldModel.Fields[i]);
+                SubViewModels[i] = new SingleFieldViewModel((SingleFieldModel)fieldModel.Fields[i],i, fieldPostion);
             }
             fieldModel.PropertyChanged += FieldModel_PropertyChanged;
         }

@@ -58,7 +58,7 @@ namespace M120_226B_UTT_Project {
         public UltimateFieldViewModel(BasicFieldModel fieldModel, GameSetupViewModel setupData) {
             SubViewModels = new BasicFieldViewModel[9];
             for (int i = 0; i < fieldModel.Fields.Length; i++) {
-                SubViewModels[i] = new BasicFieldViewModel((BasicFieldModel)fieldModel.Fields[i]);
+                SubViewModels[i] = new BasicFieldViewModel((BasicFieldModel)fieldModel.Fields[i],i);
             }
 
 

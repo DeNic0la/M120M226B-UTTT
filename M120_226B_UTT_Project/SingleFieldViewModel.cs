@@ -46,8 +46,10 @@ namespace M120_226B_UTT_Project {
                 }
             }
         }
-        public SingleFieldViewModel(SingleFieldModel model) {
-
+        private int ownPostion;
+        private int parentPosition;
+        public SingleFieldViewModel(SingleFieldModel model, int fieldPosition,int parentPosition) {
+            ownPostion = fieldPosition;
             _fieldState = model.FieldState;
 
             model.PropertyChanged += Model_PropertyChanged;
@@ -73,17 +75,28 @@ namespace M120_226B_UTT_Project {
 
         public void fieldClick(SingleFieldModel field)
         {
+            if (GameManager.LastMovePostion != 10)
+            {
+                if (GameManager.LastMovePostion != parentPosition)
+                {
+                    return;
+                }
+            }
             //MessageBox.Show("It Worked");
             if (GameManager.Turn == Turn.X)
             {
                 field.FieldState = FieldState.X;
                 GameManager.Turn = Turn.O;
+                GameManager.LastMovePostion = ownPostion;
+                
             }
             else if (GameManager.Turn == Turn.O)
             {
                 field.FieldState = FieldState.O;
                 GameManager.Turn = Turn.X;
+                GameManager.LastMovePostion = ownPostion;
             }
+            
         }
 
         private void Model_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e) {
