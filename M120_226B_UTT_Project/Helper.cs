@@ -3,13 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace M120_226B_UTT_Project {
     public static class Helper {
         public static FieldState ValidateFieldState(IField[] fields) { // This Checks if the Field is Captured by eighter sides, this will not check for Tie (No Need)
 
+            
             FieldState[] board = new FieldState[9];// Extracting the FieldStates into an Array, this will Perform better
-            for (int i = 0; i < 9;) {
+            for (int i = 0; i < 9;i++) {
                 board[i] = fields[i].FieldState;
             }
 
@@ -20,7 +22,7 @@ namespace M120_226B_UTT_Project {
             if (isFieldWin(board, FieldState.O)) {
                 return FieldState.O;
             }
-
+            
             return FieldState.Empty;
         }
         private static int[][] win = new int[][]//If One of those is complete, the field ist "Won". This is for ValidateFieldState

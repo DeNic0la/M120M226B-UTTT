@@ -11,7 +11,7 @@
 
         <TabControl Margin="0" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" >
             <TabItem Header="tabDefault" IsSelected="{Binding FieldIsEmpty, Mode=OneWay}" Visibility="Collapsed" Background="{x:Null}" BorderBrush="{x:Null}" Margin="0" >
-                <Button x:Name="btnField" Margin="0" Background="#FF909090" BorderBrush="Black" Foreground="{x:Null}">
+                <Button x:Name="btnField" Command="{Binding FieldClickCommand}" Margin="0" Background="#FF909090" BorderBrush="Black" Foreground="{x:Null}">
 
                 </Button>
             </TabItem>

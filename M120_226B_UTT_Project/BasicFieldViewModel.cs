@@ -52,12 +52,26 @@ namespace M120_226B_UTT_Project {
                 return SubViewModels[8];
             }
         }
+        private BasicFieldModel fieldModel;
         public BasicFieldViewModel(BasicFieldModel fieldModel) {
+            this.fieldModel = fieldModel;
             SubViewModels = new SingleFieldViewModel[9];
             for (int i = 0; i < fieldModel.Fields.Length; i++) {
                 SubViewModels[i] = new SingleFieldViewModel((SingleFieldModel)fieldModel.Fields[i]);
             }
+            fieldModel.PropertyChanged += FieldModel_PropertyChanged;
         }
 
+        private void FieldModel_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
+        {
+            //Disable Childs Button Click.
+            if (fieldModel.FieldState != FieldState.Empty)
+            {
+                for(int i = 0; i < 9; i++)
+                {
+                    SubViewModels[i].FieldClickCommand = null;
+                }
+            }
+        }
     }
 }

@@ -50,7 +50,7 @@ namespace M120_226B_UTT_Project {
             if (e.PropertyName == "FieldState") {
                 _EmptySubFields--;
             }
-            if (_EmptySubFields <= 6) {
+            if (_EmptySubFields <= 6 && _FieldState == FieldState.Empty) {
                 FieldState before = _FieldState;
                 _FieldState = Helper.ValidateFieldState(_Fields);
                 if (_EmptySubFields == 0 && _FieldState == FieldState.Empty) {

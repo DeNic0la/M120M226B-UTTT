@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace M120_226B_UTT_Project {
     public class UltimateFieldViewModel : ObservableObject {
@@ -53,7 +54,7 @@ namespace M120_226B_UTT_Project {
             }
         }
 
-
+        private BasicFieldModel fieldModel;
         public UltimateFieldViewModel(BasicFieldModel fieldModel, GameSetupViewModel setupData) {
             SubViewModels = new BasicFieldViewModel[9];
             for (int i = 0; i < fieldModel.Fields.Length; i++) {
@@ -75,6 +76,7 @@ namespace M120_226B_UTT_Project {
             GameManager.Turn = setupData.First_X ? Turn.X : Turn.O;
 
             fieldModel.PropertyChanged += FieldModel_PropertyChanged;
+            this.fieldModel = fieldModel;
 
 
         }
@@ -84,6 +86,20 @@ namespace M120_226B_UTT_Project {
             if (e.PropertyName == "FieldState")
             {
                 //TODO Check For Win and Update Stats
+                if (fieldModel.FieldState == FieldState.X)
+                {
+                    _ScoreX++;
+                    MessageBox.Show("X Hat gewonnen");
+                }
+                else if (fieldModel.FieldState == FieldState.O)
+                {
+                    _ScoreO++;
+                    MessageBox.Show("O Hat gewonnen");
+                }
+                else if (fieldModel.FieldState == FieldState.Tie)
+                {
+                    MessageBox.Show("Es steht unentschieden");
+                }
             }
         }
 
