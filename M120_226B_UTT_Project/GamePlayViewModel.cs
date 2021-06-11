@@ -4,10 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace M120_226B_UTT_Project
-{
-    public class GamePlayViewModel : ObservableObject
-    {
+namespace M120_226B_UTT_Project {
+    public class GamePlayViewModel : ObservableObject {
         protected string _PlayerX;
         protected string _PlayerO;
 
@@ -16,26 +14,22 @@ namespace M120_226B_UTT_Project
 
         protected int _BotLevel;
 
-        public enum Turn
-        {
+        public enum Turn {
             X,
             O,
         }
 
         protected Turn _CurrentTurn;
 
-        public GamePlayViewModel(GameSetupViewModel setupData)
-        {
+        public GamePlayViewModel(GameSetupViewModel setupData) {
             _PlayerX = setupData.PlayerXName;
-            if (setupData.Enemy_Player)
-            {
+            if (setupData.Enemy_Player) {
                 _PlayerO = setupData.PlayerOName;
             }
-            else if (setupData.Enemy_Bot)
-            {
+            else if (setupData.Enemy_Bot) {
                 _BotLevel = setupData.BotDifficulty;
             }
-            
+
             _ScoreX = 0;
             _ScoreO = 0;
 
@@ -43,12 +37,10 @@ namespace M120_226B_UTT_Project
 
 
 
-            
-            
 
 
 
-            
+
         }
     }
 }

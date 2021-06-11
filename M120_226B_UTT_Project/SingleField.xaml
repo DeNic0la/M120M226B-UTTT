@@ -10,13 +10,13 @@
 
 
         <TabControl HorizontalAlignment="Stretch" Margin="5" VerticalAlignment="Stretch" Background="{x:Null}" Visibility="Collapsed">
-            <TabItem x:Name="tabImageX">
+            <TabItem x:Name="tabImageX" IsSelected="{Binding FieldIsX, Mode=OneWay}">
                 <Image x:Name="imageX" Source="X_Black.png"/>
             </TabItem>
-            <TabItem x:Name="tabImageO">
+            <TabItem x:Name="tabImageO" IsSelected="{Binding FieldIsO, Mode=OneWay}">
                 <Image x:Name="imageO" Source="O_Black.png"/>
             </TabItem>
-            <TabItem x:Name="tabEmpty">
+            <TabItem x:Name="tabEmpty" IsSelected="{Binding FieldIsEmpty, Mode=OneWay}">
                 <Button x:Name="btnField" Margin="1" Background="{x:Null}" BorderBrush="Black" Foreground="{x:Null}">
 
                 </Button>

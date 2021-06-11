@@ -21,8 +21,6 @@ namespace M120_226B_UTT_Project {
         public SingleField() {
             InitializeComponent();
         }
-        public void setFieldToX() {
-            //imgButtonImage.Source
-        }
+
     }
 }
