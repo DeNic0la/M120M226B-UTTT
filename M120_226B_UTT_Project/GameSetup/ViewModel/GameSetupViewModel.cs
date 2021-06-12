@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
+using M120_226B_UTT_Project.GamePlay.View;
 
 namespace M120_226B_UTT_Project.GameSetup.ViewModel
 {

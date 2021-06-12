@@ -1,9 +1,9 @@
-﻿<UserControl x:Class="M120_226B_UTT_Project.BasicField"
+﻿<UserControl x:Class="M120_226B_UTT_Project.GamePlay.View.BasicField"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:M120_226B_UTT_Project"
+             xmlns:local="clr-namespace:M120_226B_UTT_Project.GamePlay.View"
              mc:Ignorable="d" 
              d:DesignHeight="1500" d:DesignWidth="1500">
     <Grid Background="#19464646">

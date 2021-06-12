@@ -15,7 +15,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace M120_226B_UTT_Project
+namespace M120_226B_UTT_Project.GamePlay.View
 {
     /// <summary>
     /// Interaktionslogik für GameWindow.xaml

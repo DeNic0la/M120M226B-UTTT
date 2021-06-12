@@ -65,15 +65,15 @@
     <Compile Include="GamePlay\Model\SingleFieldModel.cs" />
     <Compile Include="GamePlay\ViewModel\SingleFieldViewModel.cs" />
     <Compile Include="GamePlay\ViewModel\UltimateFieldViewModel.cs" />
-    <Page Include="BasicField.xaml">
+    <Page Include="GamePlay\View\BasicField.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="GameWindow.xaml">
+    <Page Include="GamePlay\View\GameWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="SingleField.xaml">
+    <Page Include="GamePlay\View\SingleField.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -85,16 +85,16 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="BasicField.xaml.cs">
+    <Compile Include="GamePlay\View\BasicField.xaml.cs">
       <DependentUpon>BasicField.xaml</DependentUpon>
     </Compile>
     <Compile Include="GameSetup\ViewModel\GameSetupViewModel.cs" />
-    <Compile Include="GameWindow.xaml.cs">
+    <Compile Include="GamePlay\View\GameWindow.xaml.cs">
       <DependentUpon>GameWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Helper\ObservableObject.cs" />
     <Compile Include="Helper\RelayCommand.cs" />
-    <Compile Include="SingleField.xaml.cs">
+    <Compile Include="GamePlay\View\SingleField.xaml.cs">
       <DependentUpon>SingleField.xaml</DependentUpon>
     </Compile>
     <Compile Include="GameSetupWindow.xaml.cs">
@@ -139,7 +139,6 @@
     <Content Include="img\X_Black.svg" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="GamePlay\View\" />
     <Folder Include="GameSetup\Model\" />
     <Folder Include="GameSetup\View\" />
   </ItemGroup>

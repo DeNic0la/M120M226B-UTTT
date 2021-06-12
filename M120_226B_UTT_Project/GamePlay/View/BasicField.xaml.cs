@@ -13,14 +13,16 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace M120_226B_UTT_Project {
+namespace M120_226B_UTT_Project.GamePlay.View
+{
     /// <summary>
-    /// Interaktionslogik für GameField.xaml
+    /// Interaction logic for BasicField.xaml
     /// </summary>
-    public partial class SingleField : UserControl {
-        public SingleField() {
+    public partial class BasicField : UserControl
+    {
+        public BasicField()
+        {
             InitializeComponent();
         }
-
     }
 }
