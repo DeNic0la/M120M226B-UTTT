@@ -11,16 +11,16 @@
 
         <TabControl Margin="0" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" >
             <TabItem Header="tabDefault" IsSelected="{Binding FieldIsEmpty, Mode=OneWay}" Visibility="Collapsed" Background="{x:Null}" BorderBrush="{x:Null}" Margin="0" >
-                <Button x:Name="btnField" Command="{Binding FieldClickCommand}" Margin="0" Background="#FFCACACA" BorderBrush="{x:Null}" Foreground="{x:Null}">
+                <Button x:Name="btnField" Command="{Binding FieldClickCommand}" Margin="0" Background="#33FFFFFF" BorderBrush="{x:Null}" Foreground="{x:Null}">
 
                 </Button>
             </TabItem>
-            <TabItem Header="tabFieldO" IsSelected="{Binding FieldIsO, Mode=OneWay}" Visibility="Collapsed" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" >
+            <TabItem Header="tabFieldO" IsSelected="{Binding FieldIsO, Mode=OneWay}" Visibility="Collapsed" Background="#FFBFBFBF" BorderBrush="{x:Null}" Foreground="{x:Null}" >
                 <Grid Margin="0">
                     <Image x:Name="imageO" Source="/img/O_Black.png"/>
                 </Grid>
             </TabItem>
-            <TabItem Header="tabFieldX" IsSelected="{Binding FieldIsX, Mode=OneWay}" Visibility="Collapsed" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}">
+            <TabItem Header="tabFieldX" IsSelected="{Binding FieldIsX, Mode=OneWay}" Visibility="Collapsed" Background="#FFBFBFBF" BorderBrush="{x:Null}" Foreground="{x:Null}">
                 <Grid Margin="0">
                     <Image x:Name="imageX" Source="/img/X_Black.png"/>
                 </Grid>

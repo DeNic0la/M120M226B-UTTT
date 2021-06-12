@@ -11,31 +11,22 @@
             <ColumnDefinition Width="53*"/>
             <ColumnDefinition Width="35*" MinWidth="270" />
         </Grid.ColumnDefinitions>
-        <Grid Margin="10">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="1*"/>
-                <RowDefinition Height="1*"/>
-                <RowDefinition Height="1*"/>
-            </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="1*"/>
-                <ColumnDefinition Width="1*"/>
-                <ColumnDefinition Width="1*"/>
-            </Grid.ColumnDefinitions>
+        <UniformGrid Margin="0" Rows="3" Columns="3" Background="Black">
 
-            <!--Image Margin="5,5,4.6,5" Source="Mockup_M120.png" Grid.ColumnSpan="3" Grid.RowSpan="3" /-->
-            <local:BasicField Margin="5,5,5,5" DataContext="{Binding SubModel1}"/>
-            <local:BasicField Margin="5,5,5,5" DataContext="{Binding SubModel2}" Grid.Column="1"/>
-            <local:BasicField Margin="5,5,5,5" DataContext="{Binding SubModel3}" Grid.Column="2"/>
-            <local:BasicField Margin="5,5,5,5" DataContext="{Binding SubModel4}" Grid.Row="1"/>
-            <local:BasicField Margin="5,5,5,5" DataContext="{Binding SubModel5}" Grid.Row="1" Grid.Column="1"/>
-            <local:BasicField Margin="5,5,5,5" DataContext="{Binding SubModel6}" Grid.Row="1" Grid.Column="2"/>
-            <local:BasicField Margin="5,5,5,5" DataContext="{Binding SubModel7}" Grid.Row="2"/>
-            <local:BasicField Margin="5,5,5,5" DataContext="{Binding SubModel8}" Grid.Row="2" Grid.Column="1"/>
-            <local:BasicField Margin="5,5,5,5" DataContext="{Binding SubModel9}" Grid.Row="2" Grid.Column="2"/>
 
-        </Grid>
-        <StackPanel Grid.Column="1" Margin="5">
+                <!--Image Margin="5,5,4.6,5" Source="Mockup_M120.png" Grid.ColumnSpan="3" Grid.RowSpan="3" /-->
+                <local:BasicField Margin="2" DataContext="{Binding SubModel1}"/>
+                <local:BasicField Margin="2" DataContext="{Binding SubModel2}" Grid.Column="1"/>
+                <local:BasicField Margin="2" DataContext="{Binding SubModel3}" Grid.Column="2"/>
+                <local:BasicField Margin="2" DataContext="{Binding SubModel4}" Grid.Row="1"/>
+                <local:BasicField Margin="2" DataContext="{Binding SubModel5}" Grid.Row="1" Grid.Column="1"/>
+                <local:BasicField Margin="2" DataContext="{Binding SubModel6}" Grid.Row="1" Grid.Column="2"/>
+                <local:BasicField Margin="2" DataContext="{Binding SubModel7}" Grid.Row="2"/>
+                <local:BasicField Margin="2" DataContext="{Binding SubModel8}" Grid.Row="2" Grid.Column="1"/>
+                <local:BasicField Margin="2" DataContext="{Binding SubModel9}" Grid.Row="2" Grid.Column="2"/>
+
+        </UniformGrid>
+            <StackPanel Grid.Column="1" Margin="5">
             <Grid Height="100">
                 <Grid x:Name="grdPlayerXDisplayer" Margin="10,10" Background="#FF28E253">
                     <Label x:Name="lblPlayerX" Content="{Binding PlayerXDisplay, Mode=OneWay}" Margin="10" FontSize="15" HorizontalAlignment="Center" VerticalAlignment="Center"/>

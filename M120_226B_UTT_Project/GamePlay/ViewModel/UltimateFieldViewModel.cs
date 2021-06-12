@@ -80,6 +80,7 @@ namespace M120_226B_UTT_Project.GamePlay.ViewModel
         private BasicFieldModel fieldModel;
         public UltimateFieldViewModel(BasicFieldModel fieldModel, GameSetupViewModel setupData)
         {
+            GameManager.SetUp();
             SubViewModels = new BasicFieldViewModel[9];
             for (int i = 0; i < fieldModel.Fields.Length; i++)
             {

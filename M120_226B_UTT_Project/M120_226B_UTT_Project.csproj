@@ -59,6 +59,7 @@
     <Compile Include="GamePlay\ViewModel\BasicFieldViewModel.cs" />
     <Compile Include="Helper\FieldState.cs" />
     <Compile Include="Helper\GameManager.cs" />
+    <Compile Include="Helper\IObserver.cs" />
     <Compile Include="Helper\Turn.cs" />
     <Compile Include="Helper\Validator.cs" />
     <Compile Include="Helper\IField.cs" />

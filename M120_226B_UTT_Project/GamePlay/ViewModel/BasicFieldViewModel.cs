@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace M120_226B_UTT_Project.GamePlay.ViewModel
 {
-    public class BasicFieldViewModel : ObservableObject
+    public class BasicFieldViewModel : ObservableObject, IObserver
     {
         public SingleFieldViewModel[] SubViewModels;
         public SingleFieldViewModel SubModel1
@@ -98,6 +98,11 @@ namespace M120_226B_UTT_Project.GamePlay.ViewModel
                     SubViewModels[i].FieldClickCommand = null;
                 }
             }
+        }
+
+        public void ExecuteOnUpdate(string propertyName)
+        {
+            //TODO Change Background if this is a Playable field
         }
     }
 }
