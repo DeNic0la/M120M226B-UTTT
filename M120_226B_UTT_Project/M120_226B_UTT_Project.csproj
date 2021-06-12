@@ -55,28 +55,28 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="BasicFieldModel.cs" />
-    <Compile Include="BasicFieldViewModel.cs" />
-    <Compile Include="Enum.cs" />
-    <Compile Include="GameManager.cs" />
-    <Compile Include="Helper.cs" />
-    <Compile Include="IField.cs" />
-    <Compile Include="SingleFieldModel.cs" />
-    <Compile Include="SingleFieldViewModel.cs" />
-    <Compile Include="UltimateFieldViewModel.cs" />
-    <Page Include="BasicField.xaml">
+    <Compile Include="GameWindow\Model\BasicFieldModel.cs" />
+    <Compile Include="GameWindow\ViewModel\BasicFieldViewModel.cs" />
+    <Compile Include="Helper\Enum.cs" />
+    <Compile Include="Helper\GameManager.cs" />
+    <Compile Include="Helper\Helper.cs" />
+    <Compile Include="Helper\IField.cs" />
+    <Compile Include="GameWindow\Model\SingleFieldModel.cs" />
+    <Compile Include="GameWindow\ViewModel\SingleFieldViewModel.cs" />
+    <Compile Include="GameWindow\ViewModel\UltimateFieldViewModel.cs" />
+    <Page Include="GameWindow\View\BasicField.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="GameWindow.xaml">
+    <Page Include="GameWindow\View\GameWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="SingleField.xaml">
+    <Page Include="GameWindow\View\SingleField.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="GameSetupWindow.xaml">
+    <Page Include="GameSetup\View\GameSetupWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -84,20 +84,19 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="BasicField.xaml.cs">
+    <Compile Include="GameWindow\View\BasicField.xaml.cs">
       <DependentUpon>BasicField.xaml</DependentUpon>
     </Compile>
-    <Compile Include="GamePlayViewModel.cs" />
-    <Compile Include="GameSetupViewModel.cs" />
-    <Compile Include="GameWindow.xaml.cs">
+    <Compile Include="GameSetup\ViewModel\GameSetupViewModel.cs" />
+    <Compile Include="GameWindow\View\GameWindow.xaml.cs">
       <DependentUpon>GameWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ObservableObject.cs" />
-    <Compile Include="RelayCommand.cs" />
-    <Compile Include="SingleField.xaml.cs">
+    <Compile Include="Helper\ObservableObject.cs" />
+    <Compile Include="Helper\RelayCommand.cs" />
+    <Compile Include="GameWindow\View\SingleField.xaml.cs">
       <DependentUpon>SingleField.xaml</DependentUpon>
     </Compile>
-    <Compile Include="GameSetupWindow.xaml.cs">
+    <Compile Include="GameSetup\View\GameSetupWindow.xaml.cs">
       <DependentUpon>GameSetupWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
@@ -135,9 +134,9 @@
   <ItemGroup>
     <Content Include="img\O_Black.svg" />
     <Content Include="img\X_Black.svg" />
-    <Resource Include="Mockup_M120.png" />
-    <Resource Include="O_Black.png" />
-    <Resource Include="X_Black.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="GameSetup\Model\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

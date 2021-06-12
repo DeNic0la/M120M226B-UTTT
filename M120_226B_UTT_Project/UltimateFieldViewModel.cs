@@ -74,6 +74,7 @@ namespace M120_226B_UTT_Project {
             _ScoreO = 0;
 
             GameManager.Turn = setupData.First_X ? Turn.X : Turn.O;
+            GameManager.LastMovePostion = 10;
 
             fieldModel.PropertyChanged += FieldModel_PropertyChanged;
             this.fieldModel = fieldModel;

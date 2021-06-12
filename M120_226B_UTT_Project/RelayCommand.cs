@@ -11,10 +11,7 @@ namespace M120_226B_UTT_Project {
         private readonly Predicate<object> _canExecute;
 
         public RelayCommand(Action<object> execute, Predicate<object> canExecute = null) {
-            if (execute == null)
-                throw new ArgumentNullException("execute");
-
-            _execute = execute;
+            _execute = execute ?? throw new ArgumentNullException("execute");
             _canExecute = canExecute;
         }
 

@@ -56,6 +56,8 @@ namespace M120_226B_UTT_Project {
 
             _Model = model;
 
+            this.parentPosition = parentPosition;
+
             FieldClickCommand = new RelayCommand(command => fieldClick(_Model));
 
 
@@ -79,10 +81,10 @@ namespace M120_226B_UTT_Project {
             {
                 if (GameManager.LastMovePostion != parentPosition)
                 {
+                    //MessageBox.Show("LastMovePosition:"+GameManager.LastMovePostion+"\nParentPosition:"+parentPosition+"\nOwnPosition:"+ownPostion);
                     return;
                 }
             }
-            //MessageBox.Show("It Worked");
             if (GameManager.Turn == Turn.X)
             {
                 field.FieldState = FieldState.X;

@@ -15,11 +15,11 @@ namespace M120_226B_UTT_Project {
                 board[i] = fields[i].FieldState;
             }
 
-            if (isFieldWin(board, FieldState.X)) {
+            if (IsFieldWin(board, FieldState.X)) {
                 return FieldState.X;
             }
 
-            if (isFieldWin(board, FieldState.O)) {
+            if (IsFieldWin(board, FieldState.O)) {
                 return FieldState.O;
             }
             
@@ -38,7 +38,7 @@ namespace M120_226B_UTT_Project {
         };
 
 
-        private static bool isFieldWin(FieldState[] board, FieldState toCheck) { // for ValidateFieldState
+        private static bool IsFieldWin(FieldState[] board, FieldState toCheck) { // for ValidateFieldState
 
             for (int i = 0; i < win.Length; i++) {
                 if (board[win[i][0]] == toCheck &&
