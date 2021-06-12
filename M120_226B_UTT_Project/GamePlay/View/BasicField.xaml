@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:M120_226B_UTT_Project.GamePlay.View"
              mc:Ignorable="d" 
              d:DesignHeight="1500" d:DesignWidth="1500">
-    <Grid Background="#FFBFBFBF">
+    <Grid Background="{Binding BackgroundColor}">
         <Grid.RowDefinitions>
             <RowDefinition Height="1*"/>
             <RowDefinition Height="1*"/>

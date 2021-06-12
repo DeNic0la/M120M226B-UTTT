@@ -109,7 +109,7 @@ namespace M120_226B_UTT_Project
                 _fieldState = _Model.FieldState;
                 RaisePropertyChanged("FieldIsEmpty");
                 RaisePropertyChanged("FieldIsO");
-                RaisePropertyChanged("FieldIsX");
+                RaisePropertyChanged("FieldIsX");                
             }
 
         }
