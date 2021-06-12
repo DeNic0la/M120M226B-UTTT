@@ -1,4 +1,5 @@
-﻿using System;
+﻿using M120_226B_UTT_Project.Helper;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -7,26 +8,33 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
 
-namespace M120_226B_UTT_Project {
-    public class GameSetupViewModel : ObservableObject {
+namespace M120_226B_UTT_Project.GameSetup.ViewModel
+{
+    public class GameSetupViewModel : ObservableObject
+    {
         GameSetupWindow windowForClosing;
-        public GameSetupViewModel(GameSetupWindow windowToClose) {
+        public GameSetupViewModel(GameSetupWindow windowToClose)
+        {
             windowForClosing = windowToClose;
             StartGameCommand = new RelayCommand(command => StartGameButtonClick("StartGameButton"));
         }
 
         private string _PlayerX = "";
-        public string PlayerXName {
+        public string PlayerXName
+        {
             get { return _PlayerX; }
-            set {
+            set
+            {
                 _PlayerX = value;
                 RaisePropertyChanged("PlayerXName");
             }
         }
         private string _PlayerO = "";
-        public string PlayerOName {
+        public string PlayerOName
+        {
             get { return _PlayerO; }
-            set {
+            set
+            {
                 _PlayerO = value;
                 RaisePropertyChanged("PlayerOName");
             }
@@ -42,13 +50,17 @@ namespace M120_226B_UTT_Project {
          */
         private int _EnemyPlayer = 0;
 
-        public bool Enemy_Default {
+        public bool Enemy_Default
+        {
             get { return _EnemyPlayer == 0; }
         }
-        public bool Enemy_Bot {
+        public bool Enemy_Bot
+        {
             get { return _EnemyPlayer == 1; }
-            set {
-                if (value) {
+            set
+            {
+                if (value)
+                {
                     _EnemyPlayer = 1;
                     RaisePropertyChanged("Enemy_Player");
                     RaisePropertyChanged("Enemy_Bot");
@@ -56,10 +68,13 @@ namespace M120_226B_UTT_Project {
 
             }
         }
-        public bool Enemy_Player {
+        public bool Enemy_Player
+        {
             get { return _EnemyPlayer == 2; }
-            set {
-                if (value) {
+            set
+            {
+                if (value)
+                {
                     _EnemyPlayer = 2;
                     RaisePropertyChanged("Enemy_Player");
                     RaisePropertyChanged("Enemy_Bot");
@@ -78,10 +93,13 @@ namespace M120_226B_UTT_Project {
         }
 
 
-        public bool Bot_Level1 {
+        public bool Bot_Level1
+        {
             get { return _BotDifficulty == 1; }
-            set {
-                if (value) {
+            set
+            {
+                if (value)
+                {
                     _BotDifficulty = 1;
                     RaisePropertyChanged("Bot_Level1");
                     RaisePropertyChanged("Bot_Level2");
@@ -90,10 +108,13 @@ namespace M120_226B_UTT_Project {
 
             }
         }
-        public bool Bot_Level2 {
+        public bool Bot_Level2
+        {
             get { return _BotDifficulty == 2; }
-            set {
-                if (value) {
+            set
+            {
+                if (value)
+                {
                     _BotDifficulty = 2;
                     RaisePropertyChanged("Bot_Level1");
                     RaisePropertyChanged("Bot_Level2");
@@ -102,10 +123,13 @@ namespace M120_226B_UTT_Project {
 
             }
         }
-        public bool Bot_Level3 {
+        public bool Bot_Level3
+        {
             get { return _BotDifficulty == 3; }
-            set {
-                if (value) {
+            set
+            {
+                if (value)
+                {
                     _BotDifficulty = 3;
                     RaisePropertyChanged("Bot_Level1");
                     RaisePropertyChanged("Bot_Level2");
@@ -121,10 +145,13 @@ namespace M120_226B_UTT_Project {
 
         private int _FirstMove = 0;
 
-        public bool First_X {
+        public bool First_X
+        {
             get { return _FirstMove == 1; }
-            set {
-                if (value) {
+            set
+            {
+                if (value)
+                {
                     _FirstMove = 1;
                     RaisePropertyChanged("First_X");
                     RaisePropertyChanged("First_O");
@@ -132,10 +159,13 @@ namespace M120_226B_UTT_Project {
 
             }
         }
-        public bool First_O {
+        public bool First_O
+        {
             get { return _FirstMove == 2; }
-            set {
-                if (value) {
+            set
+            {
+                if (value)
+                {
                     _FirstMove = 2;
                     RaisePropertyChanged("First_X");
                     RaisePropertyChanged("First_O");
@@ -147,8 +177,10 @@ namespace M120_226B_UTT_Project {
 
         public ICommand StartGameCommand { get; set; }
 
-        private void StartGameButtonClick(object sender) {
-            if (IsValidData()) {
+        private void StartGameButtonClick(object sender)
+        {
+            if (IsValidData())
+            {
 
                 // Pass Data To Game Window Here
                 GameWindow gameWindow = new GameWindow(this);
@@ -161,28 +193,36 @@ namespace M120_226B_UTT_Project {
 
         }
 
-        private bool IsValidData() {
+        private bool IsValidData()
+        {
             List<string> errors = new List<string>();
             if (_PlayerX.Length < 1)
                 errors.Add("Der Name des Spieler X ist nicht gültig");
-            if (_FirstMove == 0) {
+            if (_FirstMove == 0)
+            {
                 _FirstMove = 1;
                 RaisePropertyChanged("First_X");
             }
-            if (_EnemyPlayer == 0) {
+            if (_EnemyPlayer == 0)
+            {
                 errors.Add("Wählen Sie Ihren Gegner aus");
             }
-            else if (_EnemyPlayer == 1) {// Gegner ist Bot
-                if (_BotDifficulty == 0) {
+            else if (_EnemyPlayer == 1)
+            {// Gegner ist Bot
+                if (_BotDifficulty == 0)
+                {
                     errors.Add("Wählen Sie eine Schwirigkeitsstufe für den Bot an");
                 }
             }
-            else if (_EnemyPlayer == 2) {// Gegner ist Spieler
-                if (PlayerOName.Length < 1) {
+            else if (_EnemyPlayer == 2)
+            {// Gegner ist Spieler
+                if (PlayerOName.Length < 1)
+                {
                     errors.Add("Der Name des Spieler O ist nicht gültig");
                 }
             }
-            if (errors.Count > 0) {
+            if (errors.Count > 0)
+            {
                 MessageBox.Show("Es sind folgende Fehler aufgetreten: \n" + string.Join("\n", errors));
                 return false;
             }

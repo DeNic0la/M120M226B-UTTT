@@ -1,4 +1,6 @@
-﻿using System;
+﻿using M120_226B_UTT_Project.GamePlay.Model;
+using M120_226B_UTT_Project.Helper;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +8,8 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
 
-namespace M120_226B_UTT_Project {
+namespace M120_226B_UTT_Project
+{
     public class SingleFieldViewModel : ObservableObject {
         private FieldState _fieldState;
         private SingleFieldModel _Model;

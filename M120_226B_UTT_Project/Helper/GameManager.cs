@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace M120_226B_UTT_Project
+namespace M120_226B_UTT_Project.Helper
 {
-    public static class GameManager 
+    public static class GameManager
     {
         public static Turn Turn;
         public static int LastMovePostion;
