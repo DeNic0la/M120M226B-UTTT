@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace M120_226B_UTT_Project.Helper
 {
@@ -47,7 +43,7 @@ namespace M120_226B_UTT_Project.Helper
         }
         private static void notifyObservers(string propertyName)
         {
-            foreach(IObserver observer in Observers)
+            foreach (IObserver observer in Observers)
             {
                 observer.ExecuteOnUpdate(propertyName);
             }

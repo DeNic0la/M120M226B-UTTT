@@ -1,10 +1,5 @@
 ﻿using M120_226B_UTT_Project.GamePlay.Model;
 using M120_226B_UTT_Project.Helper;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Media;
 
 namespace M120_226B_UTT_Project.GamePlay.ViewModel
@@ -91,9 +86,10 @@ namespace M120_226B_UTT_Project.GamePlay.ViewModel
             GameManager.Subscribe(this);
 
         }
-        private Color _BackgroundColor ;
-        public SolidColorBrush BackgroundColor { 
-            get 
+        private Color _BackgroundColor;
+        public SolidColorBrush BackgroundColor
+        {
+            get
             {
                 return new SolidColorBrush(_BackgroundColor);
             }
@@ -131,7 +127,7 @@ namespace M120_226B_UTT_Project.GamePlay.ViewModel
                 }
                 RaisePropertyChanged("BackgroundColor");
             }
-            
+
         }
     }
 }

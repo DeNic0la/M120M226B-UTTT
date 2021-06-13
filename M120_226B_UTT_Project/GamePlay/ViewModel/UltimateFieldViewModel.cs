@@ -1,12 +1,8 @@
 ﻿using M120_226B_UTT_Project.GamePlay.Model;
 using M120_226B_UTT_Project.GameSetup.ViewModel;
 using M120_226B_UTT_Project.Helper;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Media;
 
 namespace M120_226B_UTT_Project.GamePlay.ViewModel
 {
@@ -138,6 +134,8 @@ namespace M120_226B_UTT_Project.GamePlay.ViewModel
             if (propertyName == "Turn")
             {
                 RaisePropertyChanged("MoveTextDisplay");
+                RaisePropertyChanged("BackgroundPlayerO");
+                RaisePropertyChanged("BackgroundPlayerX");
             }
         }
 
@@ -154,7 +152,7 @@ namespace M120_226B_UTT_Project.GamePlay.ViewModel
         {
             get
             {
-                return "Spieler: "+_PlayerX+" (X)";
+                return "Spieler: " + _PlayerX + " (X)";
             }
         }
         public string PlayerODisplay
@@ -168,22 +166,42 @@ namespace M120_226B_UTT_Project.GamePlay.ViewModel
         {
             get
             {
-                return "Der Spieler "+ (GameManager.Turn == Turn.X ? _PlayerX+" (X)" : _PlayerO+" (O)") +" ist am Zug.";
+                return "Der Spieler " + (GameManager.Turn == Turn.X ? _PlayerX + " (X)" : _PlayerO + " (O)") + " ist am Zug.";
             }
         }
         public string ScoreXDisplay
         {
             get
             {
-                return "X: "+_ScoreX;
+                return "X: " + _ScoreX;
             }
         }
         public string ScoreODisplay
         {
             get
             {
-                return "O: "+_ScoreO;
+                return "O: " + _ScoreO;
             }
         }
+        private SolidColorBrush defaultColor = new SolidColorBrush(Color.FromRgb(215, 215, 215));
+        private SolidColorBrush selectedColor = new SolidColorBrush(Color.FromRgb(40, 226, 83));
+
+        public SolidColorBrush BackgroundPlayerX
+        {
+            get
+            {
+                return GameManager.Turn == Turn.X ? selectedColor : defaultColor;
+            }
+
+        }
+        public SolidColorBrush BackgroundPlayerO
+        {
+            get
+            {
+                return GameManager.Turn == Turn.O ? selectedColor : defaultColor;
+            }
+
+        }
+
     }
 }

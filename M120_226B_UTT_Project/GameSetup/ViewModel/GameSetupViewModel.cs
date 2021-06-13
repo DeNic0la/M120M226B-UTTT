@@ -1,13 +1,8 @@
-﻿using M120_226B_UTT_Project.Helper;
-using System;
+﻿using M120_226B_UTT_Project.GamePlay.View;
+using M120_226B_UTT_Project.Helper;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
-using M120_226B_UTT_Project.GamePlay.View;
 
 namespace M120_226B_UTT_Project.GameSetup.ViewModel
 {
@@ -198,7 +193,10 @@ namespace M120_226B_UTT_Project.GameSetup.ViewModel
         {
             List<string> errors = new List<string>();
             if (_PlayerX.Length < 1)
+            {
                 errors.Add("Der Name des Spieler X ist nicht gültig");
+            }
+
             if (_FirstMove == 0)
             {
                 _FirstMove = 1;
@@ -228,7 +226,9 @@ namespace M120_226B_UTT_Project.GameSetup.ViewModel
                 return false;
             }
             else
+            {
                 return true;
+            }
         }
 
 

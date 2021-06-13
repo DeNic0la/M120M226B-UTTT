@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-
-namespace M120_226B_UTT_Project.Helper
+﻿namespace M120_226B_UTT_Project.Helper
 {
     public static class Validator
     {
