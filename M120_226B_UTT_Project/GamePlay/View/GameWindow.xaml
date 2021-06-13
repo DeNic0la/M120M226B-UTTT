@@ -34,18 +34,18 @@
             </Grid>
             <Grid Height="100">
                 <Grid x:Name="grdPlayerODisplayer" Margin="10,10" Background="#FF28E253">
-                    <Label x:Name="lblPlayerO" Content="Spieler ($NameSpieler): O" Margin="10" FontSize="15" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    <Label x:Name="lblPlayerO" Content="{Binding PlayerODisplay, Mode=OneWay}" Margin="10" FontSize="15" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                 </Grid>
             </Grid>
             <Grid Height="70" MinWidth="250">
-                <Label x:Name="lblCurrentPlayerInfo" Content="Der Spieler $NameSpieler (X/O) ist am Zug" Margin="10" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                <Label x:Name="lblCurrentPlayerInfo" Content="{Binding MoveTextDisplay, Mode=OneWay}" Margin="10" HorizontalAlignment="Center" VerticalAlignment="Center"/>
 
             </Grid>
             <Grid Height="97" Margin="0,0,0.4,0">
                 <StackPanel Margin="5">
                     <Label x:Name="lblScoreTitle" Content="Score:"/>
-                    <Label x:Name="lblScoreX" Content="X: 0"/>
-                    <Label x:Name="lblScoreO" Content="O: 0"/>
+                    <Label x:Name="lblScoreX" Content="{Binding ScoreXDisplay, Mode=OneWay}"/>
+                    <Label x:Name="lblScoreO" Content="{Binding ScoreODisplay, Mode=OneWay}"/>
                 </StackPanel>
 
             </Grid>

@@ -10,7 +10,7 @@ using System.Windows;
 
 namespace M120_226B_UTT_Project.GamePlay.ViewModel
 {
-    public class UltimateFieldViewModel : ObservableObject
+    public class UltimateFieldViewModel : ObservableObject, IObserver
     {
         private BasicFieldViewModel[] SubViewModels;
         public BasicFieldViewModel SubModel1
@@ -81,6 +81,7 @@ namespace M120_226B_UTT_Project.GamePlay.ViewModel
         public UltimateFieldViewModel(BasicFieldModel fieldModel, GameSetupViewModel setupData)
         {
             GameManager.SetUp();
+            GameManager.Subscribe(this);
             SubViewModels = new BasicFieldViewModel[9];
             for (int i = 0; i < fieldModel.Fields.Length; i++)
             {
@@ -132,6 +133,14 @@ namespace M120_226B_UTT_Project.GamePlay.ViewModel
             }
         }
 
+        public void ExecuteOnUpdate(string propertyName)
+        {
+            if (propertyName == "Turn")
+            {
+                RaisePropertyChanged("MoveTextDisplay");
+            }
+        }
+
         protected string _PlayerX;
         protected string _PlayerO;
 
@@ -145,9 +154,36 @@ namespace M120_226B_UTT_Project.GamePlay.ViewModel
         {
             get
             {
-                return "TEST";
+                return "Spieler: "+_PlayerX+" (X)";
             }
         }
-
+        public string PlayerODisplay
+        {
+            get
+            {
+                return "Spieler: " + _PlayerO + " (O)";
+            }
+        }
+        public string MoveTextDisplay
+        {
+            get
+            {
+                return "Der Spieler "+ (GameManager.Turn == Turn.X ? _PlayerX+" (X)" : _PlayerO+" (O)") +" ist am Zug.";
+            }
+        }
+        public string ScoreXDisplay
+        {
+            get
+            {
+                return "X: "+_ScoreX;
+            }
+        }
+        public string ScoreODisplay
+        {
+            get
+            {
+                return "O: "+_ScoreO;
+            }
+        }
     }
 }

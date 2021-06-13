@@ -8,7 +8,19 @@ namespace M120_226B_UTT_Project.Helper
 {
     public static class GameManager
     {
-        public static Turn Turn;
+        public static Turn Turn
+        {
+            get
+            {
+                return _Turn;
+            }
+            set
+            {
+                _Turn = value;
+                notifyObservers("Turn");
+            }
+        }
+        private static Turn _Turn;
         public static void SetUp()
         {
             Observers = new List<IObserver>();
