@@ -73,6 +73,19 @@ namespace M120_226B_UTT_Project.GamePlay.Model
                 }
             }
         }
+
+        public void reset()
+        {
+            
+            foreach (IField subComponent in Fields)
+            {
+                subComponent.reset();
+            }
+            _FieldState = FieldState.Empty;
+            _EmptySubFields = 9;
+            RaisePropertyChanged("FieldReset");
+            
+        }
         public IField[] Fields
         {
             get

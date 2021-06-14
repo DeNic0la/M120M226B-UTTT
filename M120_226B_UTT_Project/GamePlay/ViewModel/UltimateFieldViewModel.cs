@@ -1,6 +1,7 @@
 ﻿using M120_226B_UTT_Project.GamePlay.Model;
 using M120_226B_UTT_Project.GameSetup.ViewModel;
 using M120_226B_UTT_Project.Helper;
+using System.Threading;
 using System.Windows;
 using System.Windows.Media;
 
@@ -111,11 +112,14 @@ namespace M120_226B_UTT_Project.GamePlay.ViewModel
         {
             if (e.PropertyName == "FieldState")
             {
-                //TODO Check For Win and Update Stats
+
+                Thread.Sleep(100);//Wait for Gui to Display
+
                 if (fieldModel.FieldState == FieldState.X)
                 {
                     _ScoreX++;
                     MessageBox.Show("X Hat gewonnen");
+                    
                 }
                 else if (fieldModel.FieldState == FieldState.O)
                 {
@@ -126,6 +130,15 @@ namespace M120_226B_UTT_Project.GamePlay.ViewModel
                 {
                     MessageBox.Show("Es steht unentschieden");
                 }
+
+                Thread resetField = new Thread(() =>
+                {
+                    fieldModel.reset();
+                });
+                resetField.Start();
+
+                RaisePropertyChanged("ScoreXDisplay");
+                RaisePropertyChanged("ScoreODisplay");
             }
         }
 

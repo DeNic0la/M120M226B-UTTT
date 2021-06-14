@@ -7,7 +7,7 @@ namespace M120_226B_UTT_Project.GamePlay.Model
         public SingleFieldModel()
         {
             _FieldState = FieldState.Empty;
-            //Postion = postition; //Probably not needed
+
         }
         private FieldState _FieldState;
 
@@ -23,7 +23,10 @@ namespace M120_226B_UTT_Project.GamePlay.Model
                 RaisePropertyChanged("FieldState");
             }
         }
-        //public int Postion { get; } //Probably not needed
+        public void reset()
+        {
+            FieldState = FieldState.Empty;
+        }
 
     }
 }

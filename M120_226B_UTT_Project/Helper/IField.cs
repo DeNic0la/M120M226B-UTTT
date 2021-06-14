@@ -3,5 +3,6 @@
     public interface IField
     {
         FieldState FieldState { get; }
+        void reset();
     }
 }
