@@ -22,6 +22,10 @@ namespace M120_226B_UTT_Project.Helper
             Observers = new List<IObserver>();
             _CompletedFields = new List<int>();
         }
+        public static void Restart()
+        {
+            _CompletedFields = new List<int>();
+        }
         public static int LastMovePostion
         {
             get

@@ -85,8 +85,7 @@ namespace M120_226B_UTT_Project
                 _FieldClickCommand = value;
                 RaisePropertyChanged("FieldClickCommand");
             }
-        }
-
+        }       
 
 
         public void fieldClick(SingleFieldModel field)
@@ -98,6 +97,10 @@ namespace M120_226B_UTT_Project
                     //MessageBox.Show("LastMovePosition:"+GameManager.LastMovePostion+"\nParentPosition:"+parentPosition+"\nOwnPosition:"+ownPostion);
                     return;
                 }
+            }
+            else if (_Model.Parent.FieldState != FieldState.Empty)
+            {
+                return;
             }
             if (GameManager.Turn == Turn.X)
             {

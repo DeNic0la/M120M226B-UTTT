@@ -28,5 +28,7 @@ namespace M120_226B_UTT_Project.GamePlay.Model
             FieldState = FieldState.Empty;
         }
 
+        public BasicFieldModel Parent;
+
     }
 }

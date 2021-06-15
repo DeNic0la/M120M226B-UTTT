@@ -30,6 +30,7 @@ namespace M120_226B_UTT_Project.GamePlay.Model
                 for (int i = 0; i < 9; i++)
                 {
                     SingleFieldModel subFieldModel = new SingleFieldModel();
+                    subFieldModel.Parent = this;
                     subFieldModel.PropertyChanged += SingleFieldModel_PropertyChanged;
                     _Fields[i] = subFieldModel;
                 }

@@ -104,13 +104,8 @@ namespace M120_226B_UTT_Project.GamePlay.ViewModel
 
         private void FieldModel_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
         {
-            //Disable Childs Button Click.
             if (fieldModel.FieldState != FieldState.Empty)
             {
-                for (int i = 0; i < 9; i++)
-                {
-                    SubViewModels[i].FieldClickCommand = null;
-                }
                 GameManager.CompletedField = ownFieldPosition;
             }
         }

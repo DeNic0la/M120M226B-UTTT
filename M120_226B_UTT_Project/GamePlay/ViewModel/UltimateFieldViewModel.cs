@@ -134,6 +134,13 @@ namespace M120_226B_UTT_Project.GamePlay.ViewModel
                 Thread resetField = new Thread(() =>
                 {
                     fieldModel.reset();
+                    GameManager.Restart();
+                    GameManager.LastMovePostion = 10;
+                    foreach(BasicFieldViewModel bfvm in SubViewModels)
+                    {
+                        bfvm.ExecuteOnUpdate("LastMovePosition");
+                    }
+                    
                 });
                 resetField.Start();
 
