@@ -17,6 +17,7 @@
             <ColumnDefinition Width="1*"/>
             <ColumnDefinition Width="1*"/>
         </Grid.ColumnDefinitions>
+        <Image x:Name="imageO" Grid.ColumnSpan="3" Grid.RowSpan="3" Source="{Binding ImageForField}" Panel.ZIndex="5" Margin="3"/>
         <local:SingleField DataContext="{Binding SubModel1}" Margin="0"/>
         <local:SingleField DataContext="{Binding SubModel2}" Margin="0" Grid.Column="1"/>
         <local:SingleField DataContext="{Binding SubModel3}" Margin="0" Grid.Column="2"/>

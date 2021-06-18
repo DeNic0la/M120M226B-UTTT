@@ -68,6 +68,12 @@ namespace M120_226B_UTT_Project.GamePlay.ViewModel {
         }
         private Color _BackgroundColor;
 
+        public string ImageForField {
+            get {
+                return _fieldModel.FieldState == FieldState.O ? "/img/O_Black.png" : _fieldModel.FieldState == FieldState.X ? "/img/X_Black.png" : "";
+            }
+        }
+
         private BasicFieldModel _fieldModel;
         private int _ownFieldPosition;
 
@@ -100,6 +106,7 @@ namespace M120_226B_UTT_Project.GamePlay.ViewModel {
             if (_fieldModel.FieldState != FieldState.Empty) {
                 GameManager.CompletedField = _ownFieldPosition;
             }
+            RaisePropertyChanged("ImageForField");
         }
 
         public void ExecuteOnUpdate(string propertyName) {
