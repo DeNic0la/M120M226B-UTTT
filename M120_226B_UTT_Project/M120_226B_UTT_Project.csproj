@@ -78,7 +78,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="GameSetupWindow.xaml">
+    <Page Include="GameSetup\View\GameSetupWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -98,7 +98,7 @@
     <Compile Include="GamePlay\View\SingleField.xaml.cs">
       <DependentUpon>SingleField.xaml</DependentUpon>
     </Compile>
-    <Compile Include="GameSetupWindow.xaml.cs">
+    <Compile Include="GameSetup\View\GameSetupWindow.xaml.cs">
       <DependentUpon>GameSetupWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
@@ -141,7 +141,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="GameSetup\Model\" />
-    <Folder Include="GameSetup\View\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
