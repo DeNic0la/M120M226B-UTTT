@@ -2,7 +2,7 @@
 using M120_226B_UTT_Project.Helper;
 using System.Windows.Input;
 
-namespace M120_226B_UTT_Project {
+namespace M120_226B_UTT_Project.GamePlay.ViewModel {
     public class SingleFieldViewModel : ObservableObject {
 
 
